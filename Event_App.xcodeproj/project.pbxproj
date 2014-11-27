@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372BED11A26C15100BBC302 /* LoginViewController.swift */; };
 		93DC7DA41A265FCE00265A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DA31A265FCE00265A5A /* AppDelegate.swift */; };
 		93DC7DA91A265FCE00265A5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DC7DA71A265FCE00265A5A /* Main.storyboard */; };
 		93DC7DAB1A265FCE00265A5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DC7DAA1A265FCE00265A5A /* Images.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9372BED11A26C15100BBC302 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93DC7D9E1A265FCE00265A5A /* Event_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Event_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DC7DA21A265FCE00265A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93DC7DA31A265FCE00265A5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				93DC7DEE1A26770B00265A5A /* RegisterViewController.swift */,
+				9372BED11A26C15100BBC302 /* LoginViewController.swift */,
 				93DC7DEC1A2666AD00265A5A /* EventViewController.swift */,
 			);
 			name = "View Controllers";
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */,
 				93DC7DF21A267AF200265A5A /* AlertManager.swift in Sources */,
 				93DC7DE91A26648100265A5A /* Event.swift in Sources */,
 				93DC7DE51A26645500265A5A /* User.swift in Sources */,
@@ -526,6 +530,7 @@
 				93DC7DBF1A265FCE00265A5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93DC7DC01A265FCE00265A5A /* Build configuration list for PBXNativeTarget "Event_AppTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +539,7 @@
 				93DC7DC21A265FCE00265A5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

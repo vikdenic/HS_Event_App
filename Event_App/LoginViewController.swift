@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  LoginViewController.swift
 //  Event_App
 //
 //  Created by Vik Denic on 11/26/14.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class RegisterViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
-    @IBAction func onRegisterButtonTapped(sender: UIButton)
+    @IBAction func onLoginButtonTapped(sender: UIButton)
     {
         if usernameTextField.text == "" || passwordTextField.text == ""
         {
@@ -21,11 +21,10 @@ class RegisterViewController: UIViewController {
         }
         else
         {
-            User.registerNewUser(usernameTextField.text, password: passwordTextField.text) { (result, error) -> Void in
+            User.loginUser(usernameTextField.text, password: passwordTextField.text) { (result, error) -> Void in
                 if error != nil
                 {
                     showAlertWithError(error, self)
-                    println(error.code)
                 }
             }
         }

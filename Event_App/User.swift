@@ -22,11 +22,26 @@ class User: PFUser, PFSubclassing
         newUser.username = username.lowercaseString
         newUser.password = password.lowercaseString
 
-        newUser.signUpInBackgroundWithBlock { (succeeded, theError) -> Void in
+        newUser.signUpInBackgroundWithBlock { (succeeded, parseError) -> Void in
 
-            if theError != nil
+            if parseError != nil
             {
-                completed(result: false, error: theError)
+                completed(result: false, error: parseError)
+            }
+            else
+            {
+                completed(result: true, error: nil)
+            }
+        }
+    }
+
+    class func loginUser(username : String!, password : String!, completed:(result : Bool, error : NSError!) -> Void)
+    {
+        PFUser.logInWithUsernameInBackground(username, password: password) { (user, parseError) -> Void in
+
+            if parseError != nil
+            {
+                completed(result: false, error: parseError)
             }
             else
             {
