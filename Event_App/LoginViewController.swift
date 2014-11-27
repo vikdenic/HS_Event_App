@@ -10,8 +10,15 @@ import Foundation
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+
+    override func viewDidAppear(animated: Bool) {
+        Profile.queryForCurrentUsersProfile { (profile, error) -> Void in
+            self.imageView.image = profile.profilePic
+        }
+    }
 
     @IBAction func onLoginButtonTapped(sender: UIButton)
     {
@@ -25,6 +32,10 @@ class LoginViewController: UIViewController {
                 if error != nil
                 {
                     showAlertWithError(error, self)
+                }
+                else
+                {
+
                 }
             }
         }

@@ -21,9 +21,11 @@ class Profile: PFObject, PFSubclassing
     }
 
     @NSManaged var user : User!
+    @NSManaged var name : String!
     @NSManaged var hometown : String!
     @NSManaged var bio : String!
     @NSManaged var profilePicFile : PFFile!
+    
     var profilePic : UIImage! {
         get
         {
@@ -35,7 +37,17 @@ class Profile: PFObject, PFSubclassing
         }
     }
 
-    @NSManaged var coverPhoto : String!
+    @NSManaged var coverPhotoFile : PFFile!
+    var coverPhoto : UIImage! {
+        get
+        {
+            return UIImage(data: coverPhotoFile.getData(nil))
+        }
+        set
+        {
+            coverPhotoFile = PFFile(data: UIImagePNGRepresentation(coverPhoto))
+        }
+    }
 
     class func createProfile(user : User!, completed:(profile: Profile!, succeeded: Bool!, error: NSError!) -> Void)
     {
@@ -50,6 +62,23 @@ class Profile: PFObject, PFSubclassing
             else
             {
                 completed(profile: newProfile, succeeded: true, error: error)
+            }
+        }
+    }
+
+    class func queryForCurrentUsersProfile(completed:(profile : Profile!, error : NSError!) -> Void)
+    {
+        let query = Profile.query()
+        query.whereKey("user", equalTo: PFUser.currentUser())
+        query.includeKey("user")
+        query.getFirstObjectInBackgroundWithBlock { (theProfile, error) -> Void in
+            if error != nil
+            {
+                completed(profile: nil, error: error)
+            }
+            else
+            {
+                completed(profile: theProfile as Profile!, error: nil)
             }
         }
     }
