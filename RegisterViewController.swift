@@ -25,7 +25,6 @@ class RegisterViewController: UIViewController {
                 if error != nil
                 {
                     showAlertWithError(error, self)
-                    println(error.code)
                 }
             }
         }

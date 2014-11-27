@@ -16,7 +16,7 @@ class User: PFUser, PFSubclassing
     }
 
     ///Creates new user
-    class func registerNewUser(username : String!, password : String!, completed:(result : Bool, error : NSError!) -> Void)
+    class func registerNewUser(username : String!, password : String!, completed:(result : Bool!, error : NSError!) -> Void)
     {
         let newUser = User()
         newUser.username = username.lowercaseString
@@ -30,12 +30,14 @@ class User: PFUser, PFSubclassing
             }
             else
             {
-                completed(result: true, error: nil)
+                Profile.createProfile(newUser, completed: { (profile, succeeded, error) -> Void in
+                    completed(result: true, error: nil)
+                })
             }
         }
     }
 
-    class func loginUser(username : String!, password : String!, completed:(result : Bool, error : NSError!) -> Void)
+    class func loginUser(username : String!, password : String!, completed:(result : Bool!, error : NSError!) -> Void)
     {
         PFUser.logInWithUsernameInBackground(username, password: password) { (user, parseError) -> Void in
 
