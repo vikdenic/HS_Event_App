@@ -31,9 +31,10 @@
 		93DC7DE71A26646C00265A5A /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DE61A26646C00265A5A /* Profile.swift */; };
 		93DC7DE91A26648100265A5A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DE81A26648100265A5A /* Event.swift */; };
 		93DC7DEB1A26648E00265A5A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DEA1A26648E00265A5A /* Photo.swift */; };
-		93DC7DED1A2666AD00265A5A /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DEC1A2666AD00265A5A /* EventViewController.swift */; };
 		93DC7DEF1A26770B00265A5A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DEE1A26770B00265A5A /* RegisterViewController.swift */; };
 		93DC7DF21A267AF200265A5A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DF11A267AF200265A5A /* AlertManager.swift */; };
+		93E60DF11A36548700EB5E7F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E60DF01A36548700EB5E7F /* EventTableViewCell.swift */; };
+		93E60DF31A365CC700EB5E7F /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E60DF21A365CC700EB5E7F /* EventsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,9 +77,10 @@
 		93DC7DE61A26646C00265A5A /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		93DC7DE81A26648100265A5A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		93DC7DEA1A26648E00265A5A /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		93DC7DEC1A2666AD00265A5A /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		93DC7DEE1A26770B00265A5A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
 		93DC7DF11A267AF200265A5A /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		93E60DF01A36548700EB5E7F /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		93E60DF21A365CC700EB5E7F /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9372BED31A26FD5600BBC302 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				93DC7DE41A26645500265A5A /* User.swift */,
+				93DC7DE61A26646C00265A5A /* Profile.swift */,
+				93DC7DE81A26648100265A5A /* Event.swift */,
+				93DC7DEA1A26648E00265A5A /* Photo.swift */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 		93DC7D951A265FCE00265A5A = {
 			isa = PBXGroup;
 			children = (
@@ -138,15 +151,13 @@
 				93DC7DA31A265FCE00265A5A /* AppDelegate.swift */,
 				93DC7DA71A265FCE00265A5A /* Main.storyboard */,
 				93DC7DF31A267AFA00265A5A /* Utilities */,
+				9372BED31A26FD5600BBC302 /* Data Model */,
 				93DC7DF01A26771800265A5A /* View Controllers */,
+				93E60DEF1A36546200EB5E7F /* Cells */,
 				93DC7DAA1A265FCE00265A5A /* Images.xcassets */,
 				93DC7DAC1A265FCE00265A5A /* LaunchScreen.xib */,
 				93DC7DA11A265FCE00265A5A /* Supporting Files */,
 				93DC7DE01A26642C00265A5A /* Event_App-Bridging-Header.h */,
-				93DC7DE41A26645500265A5A /* User.swift */,
-				93DC7DE61A26646C00265A5A /* Profile.swift */,
-				93DC7DE81A26648100265A5A /* Event.swift */,
-				93DC7DEA1A26648E00265A5A /* Photo.swift */,
 			);
 			path = Event_App;
 			sourceTree = "<group>";
@@ -202,7 +213,7 @@
 			children = (
 				93DC7DEE1A26770B00265A5A /* RegisterViewController.swift */,
 				9372BED11A26C15100BBC302 /* LoginViewController.swift */,
-				93DC7DEC1A2666AD00265A5A /* EventViewController.swift */,
+				93E60DF21A365CC700EB5E7F /* EventsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -213,6 +224,14 @@
 				93DC7DF11A267AF200265A5A /* AlertManager.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		93E60DEF1A36546200EB5E7F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				93E60DF01A36548700EB5E7F /* EventTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +342,8 @@
 				93DC7DE71A26646C00265A5A /* Profile.swift in Sources */,
 				93DC7DA41A265FCE00265A5A /* AppDelegate.swift in Sources */,
 				93DC7DEB1A26648E00265A5A /* Photo.swift in Sources */,
-				93DC7DED1A2666AD00265A5A /* EventViewController.swift in Sources */,
+				93E60DF11A36548700EB5E7F /* EventTableViewCell.swift in Sources */,
+				93E60DF31A365CC700EB5E7F /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +419,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -435,7 +454,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

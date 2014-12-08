@@ -19,4 +19,20 @@ class Event: PFObject, PFSubclassing
     {
         return "Event"
     }
+
+    class func queryForEvents(completed:(events : [Event!]!, error : NSError!) -> Void)
+    {
+        let query = Event.query()
+        query.includeKey("host")
+        query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
+            if error != nil
+            {
+                completed(events: nil, error: error)
+            }
+            else
+            {
+                completed(events: events as [Event!]!, error: nil)
+            }
+        }
+    }
 }
