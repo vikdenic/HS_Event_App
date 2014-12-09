@@ -30,6 +30,11 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setEventData()
     }
 
+    @IBAction func onRefreshButtonTapped(sender: UIBarButtonItem)
+    {
+        setEventData()
+    }
+
     func setEventData()
     {
         Event.queryForEvents { (events, error) -> Void in
@@ -42,6 +47,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventTableViewCell
         let event = eventsArray[indexPath.row] as Event!
         cell.eventNameLabel.text = event.title
+        cell.eventDateLabel.text = event.date.toStringOfMonthDayAndTime()
+        cell.eventImageView.image = event.eventPic
+        cell.hostImageView.image = event.host.profilePic
         return cell
     }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372BED11A26C15100BBC302 /* LoginViewController.swift */; };
+		93CD38EA1A37657800ECED82 /* MMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD38E91A37657800ECED82 /* MMExtensions.swift */; };
+		93CD38EC1A37720D00ECED82 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */; };
 		93DC7DA41A265FCE00265A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DA31A265FCE00265A5A /* AppDelegate.swift */; };
 		93DC7DA91A265FCE00265A5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DC7DA71A265FCE00265A5A /* Main.storyboard */; };
 		93DC7DAB1A265FCE00265A5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DC7DAA1A265FCE00265A5A /* Images.xcassets */; };
@@ -32,7 +34,7 @@
 		93DC7DE91A26648100265A5A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DE81A26648100265A5A /* Event.swift */; };
 		93DC7DEB1A26648E00265A5A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DEA1A26648E00265A5A /* Photo.swift */; };
 		93DC7DEF1A26770B00265A5A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DEE1A26770B00265A5A /* RegisterViewController.swift */; };
-		93DC7DF21A267AF200265A5A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DF11A267AF200265A5A /* AlertManager.swift */; };
+		93DC7DF21A267AF200265A5A /* MMAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DF11A267AF200265A5A /* MMAlertManager.swift */; };
 		93E60DF11A36548700EB5E7F /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E60DF01A36548700EB5E7F /* EventTableViewCell.swift */; };
 		93E60DF31A365CC700EB5E7F /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E60DF21A365CC700EB5E7F /* EventsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		9372BED11A26C15100BBC302 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		93CD38E91A37657800ECED82 /* MMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMExtensions.swift; sourceTree = "<group>"; };
+		93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		93DC7D9E1A265FCE00265A5A /* Event_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Event_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DC7DA21A265FCE00265A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93DC7DA31A265FCE00265A5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +82,7 @@
 		93DC7DE81A26648100265A5A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		93DC7DEA1A26648E00265A5A /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		93DC7DEE1A26770B00265A5A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
-		93DC7DF11A267AF200265A5A /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		93DC7DF11A267AF200265A5A /* MMAlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMAlertManager.swift; sourceTree = "<group>"; };
 		93E60DF01A36548700EB5E7F /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		93E60DF21A365CC700EB5E7F /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +218,7 @@
 				93DC7DEE1A26770B00265A5A /* RegisterViewController.swift */,
 				9372BED11A26C15100BBC302 /* LoginViewController.swift */,
 				93E60DF21A365CC700EB5E7F /* EventsViewController.swift */,
+				93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -221,7 +226,8 @@
 		93DC7DF31A267AFA00265A5A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				93DC7DF11A267AF200265A5A /* AlertManager.swift */,
+				93DC7DF11A267AF200265A5A /* MMAlertManager.swift */,
+				93CD38E91A37657800ECED82 /* MMExtensions.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -335,7 +341,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */,
-				93DC7DF21A267AF200265A5A /* AlertManager.swift in Sources */,
+				93CD38EC1A37720D00ECED82 /* AddEventViewController.swift in Sources */,
+				93DC7DF21A267AF200265A5A /* MMAlertManager.swift in Sources */,
 				93DC7DE91A26648100265A5A /* Event.swift in Sources */,
 				93DC7DE51A26645500265A5A /* User.swift in Sources */,
 				93DC7DEF1A26770B00265A5A /* RegisterViewController.swift in Sources */,
@@ -343,6 +350,7 @@
 				93DC7DA41A265FCE00265A5A /* AppDelegate.swift in Sources */,
 				93DC7DEB1A26648E00265A5A /* Photo.swift in Sources */,
 				93E60DF11A36548700EB5E7F /* EventTableViewCell.swift in Sources */,
+				93CD38EA1A37657800ECED82 /* MMExtensions.swift in Sources */,
 				93E60DF31A365CC700EB5E7F /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
