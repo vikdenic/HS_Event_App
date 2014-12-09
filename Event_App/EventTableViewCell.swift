@@ -10,6 +10,8 @@ import Foundation
 
 class EventTableViewCell: UITableViewCell {
 
-    
-
+    @IBOutlet var eventImageView: UIImageView!
+    @IBOutlet var hostImageView: UIImageView!
+    @IBOutlet var eventNameLabel: UILabel!
+    @IBOutlet var eventDateLabel: UILabel!
 }

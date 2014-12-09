@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
                 }
                 else
                 {
-                    //TODO: Present feed
+                    self.dismissViewControllerAnimated(true, completion: nil)
                 }
             }
         }

@@ -10,6 +10,9 @@ import UIKit
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var eventsArray = [Event]()
+    @IBOutlet var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,13 +26,26 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as UITableViewCell
+    override func viewWillAppear(animated: Bool) {
+        setEventData()
+    }
 
+    func setEventData()
+    {
+        Event.queryForEvents { (events, error) -> Void in
+            self.eventsArray = events as [Event]
+            self.tableView.reloadData()
+        }
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventTableViewCell
+        let event = eventsArray[indexPath.row] as Event!
+        cell.eventNameLabel.text = event.title
         return cell
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return eventsArray.count
     }
 }

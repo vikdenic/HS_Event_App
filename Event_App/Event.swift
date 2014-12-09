@@ -20,7 +20,36 @@ class Event: PFObject, PFSubclassing
         return "Event"
     }
 
-    class func queryForEvents(completed:(events : [Event!]!, error : NSError!) -> Void)
+    @NSManaged var title : String!
+    @NSManaged var details : String!
+    @NSManaged var date : NSDate!
+    @NSManaged var host : Profile!
+
+    @NSManaged var eventPicFile : PFFile!
+    var eventPic : UIImage! {
+        get
+        {
+            return UIImage(data: eventPicFile.getData(nil))
+        }
+        set
+        {
+            eventPicFile = PFFile(data: UIImagePNGRepresentation(eventPic))
+        }
+    }
+
+    @NSManaged var locationGeoPoint : PFGeoPoint!
+    var location : CLLocation! {
+        get
+        {
+            return CLLocation(latitude: locationGeoPoint.longitude, longitude: locationGeoPoint.latitude)
+        }
+        set
+        {
+            locationGeoPoint = PFGeoPoint(location: location)
+        }
+    }
+
+    class func queryForEvents(completed:(events : [Event]!, error : NSError!) -> Void)
     {
         let query = Event.query()
         query.includeKey("host")
@@ -31,7 +60,7 @@ class Event: PFObject, PFSubclassing
             }
             else
             {
-                completed(events: events as [Event!]!, error: nil)
+                completed(events: events as [Event], error: nil)
             }
         }
     }

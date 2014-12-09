@@ -25,6 +25,7 @@ class Profile: PFObject, PFSubclassing
     @NSManaged var hometown : String!
     @NSManaged var bio : String!
     @NSManaged var profilePicFile : PFFile!
+
     var profilePic : UIImage! {
         get
         {
