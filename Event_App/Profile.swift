@@ -26,28 +26,28 @@ class Profile: PFObject, PFSubclassing
     @NSManaged var bio : String!
     @NSManaged var profilePicFile : PFFile!
 
-    var profilePic : UIImage! {
-        get
-        {
-            return UIImage(data: profilePicFile.getData(nil))
-        }
-        set
-        {
-            profilePicFile = PFFile(data: UIImagePNGRepresentation(profilePic))
-        }
-    }
+//    var profilePic : UIImage! {
+//        get
+//        {
+//            return UIImage(data: profilePicFile.getData(nil))
+//        }
+//        set
+//        {
+//            profilePicFile = PFFile(data: UIImagePNGRepresentation(profilePic))
+//        }
+//    }
 
     @NSManaged var coverPhotoFile : PFFile!
-    var coverPhoto : UIImage! {
-        get
-        {
-            return UIImage(data: coverPhotoFile.getData(nil))
-        }
-        set
-        {
-            coverPhotoFile = PFFile(data: UIImagePNGRepresentation(coverPhoto))
-        }
-    }
+//    var coverPhoto : UIImage! {
+//        get
+//        {
+//            return UIImage(data: coverPhotoFile.getData(nil))
+//        }
+//        set
+//        {
+//            coverPhotoFile = PFFile(data: UIImagePNGRepresentation(coverPhoto))
+//        }
+//    }
 
     class func createProfile(user : User!, completed:(profile: Profile!, succeeded: Bool!, error: NSError!) -> Void)
     {

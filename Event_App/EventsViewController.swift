@@ -48,8 +48,15 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let event = eventsArray[indexPath.row] as Event!
         cell.eventNameLabel.text = event.title
         cell.eventDateLabel.text = event.date.toStringOfMonthDayAndTime()
-        cell.eventImageView.image = event.eventPic
-        cell.hostImageView.image = event.host.profilePic
+
+        event.eventPicFile.getDataInBackgroundWithBlock { (data, error) -> Void in
+            cell.eventImageView.image = UIImage(data: data)
+        }
+
+        event.host.profilePicFile.getDataInBackgroundWithBlock { (data, error) -> Void in
+            cell.hostImageView.image = UIImage(data: data)
+        }
+
         return cell
     }
 
