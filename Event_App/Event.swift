@@ -53,7 +53,7 @@ class Event: PFObject, PFSubclassing
     {
         let query = Event.query()
         query.includeKey("host")
-        query.orderByDescending("date")
+        query.orderByDescending("createdAt")
         query.findObjectsInBackgroundWithBlock { (events, error) -> Void in
             if error != nil
             {

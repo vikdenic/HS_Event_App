@@ -651,11 +651,11 @@
             </objects>
             <point key="canvasLocation" x="3333" y="1066"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="DUM-2h-huv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rUf-Dh-jol" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uAy-kV-mLp"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="uAy-kV-mLp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nc2-J4-Fhs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
