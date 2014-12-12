@@ -37,17 +37,17 @@ class Event: PFObject, PFSubclassing
         }
     }
 
-    @NSManaged var locationGeoPoint : PFGeoPoint!
-    var location : CLLocation! {
-        get
-        {
-            return CLLocation(latitude: locationGeoPoint.longitude, longitude: locationGeoPoint.latitude)
-        }
-        set
-        {
-            locationGeoPoint = PFGeoPoint(location: location)
-        }
-    }
+    @NSManaged var location : PFGeoPoint!
+//    var location : CLLocation! {
+//        get
+//        {
+//            return CLLocation(latitude: locationGeoPoint.longitude, longitude: locationGeoPoint.latitude)
+//        }
+//        set
+//        {
+//            locationGeoPoint = PFGeoPoint(location: location)
+//        }
+//    }
 
     class func queryForEvents(completed:(events : [Event]!, error : NSError!) -> Void)
     {

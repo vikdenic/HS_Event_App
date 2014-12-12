@@ -8,31 +8,87 @@
 
 import UIKit
 
-class AddEventViewController: UIViewController {
+class AddEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var detailsTextField: UITextField!
     @IBOutlet var locationTextField: UITextField!
+    var imagePicker = UIImagePickerController()
+    var selectedImage = UIImage?()
+    var location = CLLocation?()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpCamera()
+    }
 
+    func setUpCamera()
+    {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+    }
+
+    func createNewEvent()
+    {
+        let newEvent = Event()
+        newEvent.host = UniversalProfile.sharedInstance.profile
+        newEvent.details = detailsTextField.text
+        newEvent.title = titleTextField.text
+        newEvent.eventPicFile = PFFile(data: UIImagePNGRepresentation(selectedImage))
+        newEvent.location = PFGeoPoint(location: location)
+        newEvent.saveInBackgroundWithBlock(nil)
+    }
+
+    //MARK: Geocoding
+    func geocodeLocationWithBlock(located : (succeeded : Bool, error : NSError!) -> Void)
+    {
+        var geocode = CLGeocoder()
+        geocode.geocodeAddressString(locationTextField.text, completionHandler: { (placemarks, error) -> Void in
+            if error != nil
+            {
+                showAlertWithError(error, self)
+
+            }
+            else
+            {
+                let locations : [CLPlacemark]  = placemarks as [CLPlacemark]
+                self.location = locations[0].location
+                located(succeeded: true, error: error)
+            }
+        })
     }
 
     @IBAction func onSelectEventPhotoTapped(sender: UIButton)
     {
-        
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
 
     @IBAction func onDoneButtonTapped(sender: UIBarButtonItem)
     {
-        dismissViewControllerAnimated(true, completion: { () -> Void in
-            //
-        })
+        if titleTextField.text == "" || detailsTextField.text == "" || locationTextField.text == "" || selectedImage == nil
+        {
+            showAlert("Please fill out all required forms", nil, self)
+        }
+        else
+        {
+            dismissViewControllerAnimated(true, completion: { () -> Void in
+                self.geocodeLocationWithBlock({ (succeeded, error) -> Void in
+                    self.createNewEvent()
+                })
+            })
+        }
     }
 
     @IBAction func onCancelButtonTapped(sender: UIBarButtonItem)
     {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
+    {
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.selectedImage = image
+        })
     }
 }

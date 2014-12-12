@@ -56,7 +56,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventTableViewCell
         let event = eventsArray[indexPath.row] as Event!
         cell.eventNameLabel.text = event.title
-        cell.eventDateLabel.text = event.date.toStringOfMonthDayAndTime()
+        cell.eventDateLabel.text = event.createdAt.toStringOfMonthDayAndTime()
 
         event.eventPicFile.getDataInBackgroundWithBlock { (data, error) -> Void in
             cell.eventImageView.image = UIImage(data: data)

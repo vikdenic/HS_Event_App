@@ -229,8 +229,8 @@
 				93DC7DEE1A26770B00265A5A /* RegisterViewController.swift */,
 				9372BED11A26C15100BBC302 /* LoginViewController.swift */,
 				93E60DF21A365CC700EB5E7F /* EventsViewController.swift */,
-				93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */,
 				939016671A3B4E29007F5C8A /* IndividualEventViewController.swift */,
+				93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */,
 				9312247C1A3A57AD0023C95D /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
