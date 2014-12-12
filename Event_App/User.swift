@@ -31,7 +31,12 @@ class User: PFUser, PFSubclassing
             else
             {
                 Profile.createProfile(newUser, completed: { (profile, succeeded, error) -> Void in
-                    completed(result: true, error: nil)
+
+                    Profile.queryForCurrentUsersProfile({ (theProfile, error) -> Void in
+
+                        UniversalProfile.sharedInstance.profile = theProfile as Profile!
+                        completed(result: true, error: nil)
+                    })
                 })
             }
         }
@@ -47,6 +52,10 @@ class User: PFUser, PFSubclassing
             }
             else
             {
+                Profile.queryForCurrentUsersProfile({ (profile, error) -> Void in
+
+                    UniversalProfile.sharedInstance.profile = profile as Profile!
+                })
                 completed(result: true, error: nil)
             }
         }

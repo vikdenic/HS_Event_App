@@ -24,6 +24,15 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         {
             println("\(PFUser.currentUser().username) logged in")
         }
+
+        setProfileSingleton()
+    }
+
+    func setProfileSingleton()
+    {
+        Profile.queryForCurrentUsersProfile { (profile, error) -> Void in
+            UniversalProfile.sharedInstance.profile = profile
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -62,5 +71,14 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventsArray.count
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "EventsToIndivSegue"
+        {
+            let indivEventVC = segue.destinationViewController as IndividualEventViewController
+            indivEventVC.thisEvent = eventsArray[tableView.indexPathForSelectedRow()!.row]
+        }
     }
 }

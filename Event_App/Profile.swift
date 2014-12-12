@@ -78,6 +78,7 @@ class Profile: PFObject, PFSubclassing
             }
             else
             {
+                UniversalProfile.sharedInstance.profile = theProfile as Profile!
                 completed(profile: theProfile as Profile!, error: nil)
             }
         }

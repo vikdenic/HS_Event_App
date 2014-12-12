@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     {
         Event.queryForEvents { (events, error) -> Void in
             self.eventsArray = events
+
         }
     }
 

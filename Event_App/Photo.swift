@@ -19,4 +19,27 @@ class Photo: PFObject, PFSubclassing
     {
         return "Photo"
     }
+
+    @NSManaged var event : Event!
+    @NSManaged var imageFile : PFFile!
+    @NSManaged var likesCount : Int
+    @NSManaged var photographer : Profile!
+
+    class func queryForPhotos(completed:(photos : [Photo]!, error : NSError!) -> Void)
+    {
+        let query = Photo.query()
+        query.includeKey("event")
+        query.includeKey("photographer")
+        query.orderByDescending("createdAt")
+        query.findObjectsInBackgroundWithBlock { (photos, error) -> Void in
+            if error != nil
+            {
+                completed(photos: nil, error: error)
+            }
+            else
+            {
+                completed(photos: photos as [Photo], error: nil)
+            }
+        }
+    }
 }

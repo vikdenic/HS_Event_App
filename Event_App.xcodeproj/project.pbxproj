@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		9312247D1A3A57AD0023C95D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312247C1A3A57AD0023C95D /* ProfileViewController.swift */; };
 		9312247F1A3A59B10023C95D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312247E1A3A59B10023C95D /* ProfileTableViewCell.swift */; };
+		932A388C1A3B57A80004057C /* UniversalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A388B1A3B57A80004057C /* UniversalProfile.swift */; };
 		9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372BED11A26C15100BBC302 /* LoginViewController.swift */; };
+		939016661A3B49F3007F5C8A /* IndividualEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939016651A3B49F3007F5C8A /* IndividualEventTableViewCell.swift */; };
+		939016681A3B4E29007F5C8A /* IndividualEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939016671A3B4E29007F5C8A /* IndividualEventViewController.swift */; };
 		93CD38EA1A37657800ECED82 /* MMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD38E91A37657800ECED82 /* MMExtensions.swift */; };
 		93CD38EC1A37720D00ECED82 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */; };
 		93DC7DA41A265FCE00265A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC7DA31A265FCE00265A5A /* AppDelegate.swift */; };
@@ -54,7 +57,10 @@
 /* Begin PBXFileReference section */
 		9312247C1A3A57AD0023C95D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9312247E1A3A59B10023C95D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		932A388B1A3B57A80004057C /* UniversalProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalProfile.swift; sourceTree = "<group>"; };
 		9372BED11A26C15100BBC302 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		939016651A3B49F3007F5C8A /* IndividualEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualEventTableViewCell.swift; sourceTree = "<group>"; };
+		939016671A3B4E29007F5C8A /* IndividualEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualEventViewController.swift; sourceTree = "<group>"; };
 		93CD38E91A37657800ECED82 /* MMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMExtensions.swift; sourceTree = "<group>"; };
 		93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		93DC7D9E1A265FCE00265A5A /* Event_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Event_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +136,7 @@
 				93DC7DE61A26646C00265A5A /* Profile.swift */,
 				93DC7DE81A26648100265A5A /* Event.swift */,
 				93DC7DEA1A26648E00265A5A /* Photo.swift */,
+				932A388B1A3B57A80004057C /* UniversalProfile.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 				9372BED11A26C15100BBC302 /* LoginViewController.swift */,
 				93E60DF21A365CC700EB5E7F /* EventsViewController.swift */,
 				93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */,
+				939016671A3B4E29007F5C8A /* IndividualEventViewController.swift */,
 				9312247C1A3A57AD0023C95D /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
@@ -242,6 +250,7 @@
 			children = (
 				93E60DF01A36548700EB5E7F /* EventTableViewCell.swift */,
 				9312247E1A3A59B10023C95D /* ProfileTableViewCell.swift */,
+				939016651A3B49F3007F5C8A /* IndividualEventTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				932A388C1A3B57A80004057C /* UniversalProfile.swift in Sources */,
 				9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */,
 				9312247F1A3A59B10023C95D /* ProfileTableViewCell.swift in Sources */,
 				93CD38EC1A37720D00ECED82 /* AddEventViewController.swift in Sources */,
@@ -354,11 +364,13 @@
 				93DC7DE51A26645500265A5A /* User.swift in Sources */,
 				93DC7DEF1A26770B00265A5A /* RegisterViewController.swift in Sources */,
 				93DC7DE71A26646C00265A5A /* Profile.swift in Sources */,
+				939016681A3B4E29007F5C8A /* IndividualEventViewController.swift in Sources */,
 				93DC7DA41A265FCE00265A5A /* AppDelegate.swift in Sources */,
 				93DC7DEB1A26648E00265A5A /* Photo.swift in Sources */,
 				93E60DF11A36548700EB5E7F /* EventTableViewCell.swift in Sources */,
 				9312247D1A3A57AD0023C95D /* ProfileViewController.swift in Sources */,
 				93CD38EA1A37657800ECED82 /* MMExtensions.swift in Sources */,
+				939016661A3B49F3007F5C8A /* IndividualEventTableViewCell.swift in Sources */,
 				93E60DF31A365CC700EB5E7F /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

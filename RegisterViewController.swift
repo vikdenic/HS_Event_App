@@ -26,6 +26,10 @@ class RegisterViewController: UIViewController {
                 {
                     showAlertWithError(error, self)
                 }
+                else
+                {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
             }
         }
     }
