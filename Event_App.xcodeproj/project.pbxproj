@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9312247D1A3A57AD0023C95D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312247C1A3A57AD0023C95D /* ProfileViewController.swift */; };
+		9312247F1A3A59B10023C95D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312247E1A3A59B10023C95D /* ProfileTableViewCell.swift */; };
 		9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372BED11A26C15100BBC302 /* LoginViewController.swift */; };
 		93CD38EA1A37657800ECED82 /* MMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD38E91A37657800ECED82 /* MMExtensions.swift */; };
 		93CD38EC1A37720D00ECED82 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9312247C1A3A57AD0023C95D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9312247E1A3A59B10023C95D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9372BED11A26C15100BBC302 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93CD38E91A37657800ECED82 /* MMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMExtensions.swift; sourceTree = "<group>"; };
 		93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 				9372BED11A26C15100BBC302 /* LoginViewController.swift */,
 				93E60DF21A365CC700EB5E7F /* EventsViewController.swift */,
 				93CD38EB1A37720D00ECED82 /* AddEventViewController.swift */,
+				9312247C1A3A57AD0023C95D /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				93E60DF01A36548700EB5E7F /* EventTableViewCell.swift */,
+				9312247E1A3A59B10023C95D /* ProfileTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */,
+				9312247F1A3A59B10023C95D /* ProfileTableViewCell.swift in Sources */,
 				93CD38EC1A37720D00ECED82 /* AddEventViewController.swift in Sources */,
 				93DC7DF21A267AF200265A5A /* MMAlertManager.swift in Sources */,
 				93DC7DE91A26648100265A5A /* Event.swift in Sources */,
@@ -350,6 +357,7 @@
 				93DC7DA41A265FCE00265A5A /* AppDelegate.swift in Sources */,
 				93DC7DEB1A26648E00265A5A /* Photo.swift in Sources */,
 				93E60DF11A36548700EB5E7F /* EventTableViewCell.swift in Sources */,
+				9312247D1A3A57AD0023C95D /* ProfileViewController.swift in Sources */,
 				93CD38EA1A37657800ECED82 /* MMExtensions.swift in Sources */,
 				93E60DF31A365CC700EB5E7F /* EventsViewController.swift in Sources */,
 			);

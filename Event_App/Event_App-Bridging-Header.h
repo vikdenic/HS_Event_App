@@ -4,3 +4,4 @@
 
 #import <Parse/Parse.h>
 #import <Parse/PFObject+Subclass.h>
+#import <ParseUI/ParseUI.h>
