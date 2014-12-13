@@ -632,7 +632,7 @@
                     <navigationItem key="navigationItem" id="E5j-J6-U3t">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="yDQ-rh-akO">
                             <connections>
-                                <segue destination="ysc-7C-DEH" kind="presentation" id="dE1-Oz-NIv"/>
+                                <segue destination="wX1-3G-MwV" kind="presentation" id="dE1-Oz-NIv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -676,26 +676,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmE-rH-fCq">
-                                <rect key="frame" x="227.5" y="202" width="146" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="1ja-c8-VPP"/>
-                                    <constraint firstAttribute="height" constant="30" id="SJ0-n5-ckh"/>
-                                </constraints>
-                                <state key="normal" title="Change Profile Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wax-Mu-eNC">
-                                <rect key="frame" x="228.5" y="257" width="144" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="N3K-Jx-eP2"/>
-                                    <constraint firstAttribute="width" constant="144" id="dj4-jJ-Mhz"/>
-                                </constraints>
-                                <state key="normal" title="Change Cover Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwz-VI-gR5">
                                 <rect key="frame" x="195" y="312" width="211" height="30"/>
                                 <constraints>
@@ -722,25 +702,52 @@
                                     <constraint firstAttribute="width" constant="21" id="yl7-wt-byc"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmE-rH-fCq">
+                                <rect key="frame" x="227" y="255" width="146" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="WPd-Ed-WZj"/>
+                                    <constraint firstAttribute="height" constant="30" id="aS2-ZH-Cn0"/>
+                                </constraints>
+                                <state key="normal" title="Change Profile Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSelectPhotoTapped:" destination="ysc-7C-DEH" eventType="touchUpInside" id="4CK-zY-ljI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mwz-VI-gR5" firstAttribute="top" secondItem="IbJ-wV-hBr" secondAttribute="bottom" constant="6" id="0ce-tz-vKT"/>
-                            <constraint firstItem="GmE-rH-fCq" firstAttribute="centerX" secondItem="Wax-Mu-eNC" secondAttribute="centerX" id="70W-6O-tn3"/>
-                            <constraint firstItem="Wax-Mu-eNC" firstAttribute="top" secondItem="GmE-rH-fCq" secondAttribute="bottom" constant="25" id="Hkk-Bo-MYG"/>
-                            <constraint firstItem="Wax-Mu-eNC" firstAttribute="centerX" secondItem="IbJ-wV-hBr" secondAttribute="centerX" id="Jnm-6p-a5z"/>
+                            <constraint firstItem="GmE-rH-fCq" firstAttribute="centerX" secondItem="IbJ-wV-hBr" secondAttribute="centerX" id="Ehw-iJ-6da"/>
+                            <constraint firstItem="IbJ-wV-hBr" firstAttribute="top" secondItem="GmE-rH-fCq" secondAttribute="bottom" constant="8" id="Y1g-fP-169"/>
                             <constraint firstAttribute="centerX" secondItem="IbJ-wV-hBr" secondAttribute="centerX" id="Z77-dp-YiT"/>
                             <constraint firstItem="onu-KI-cn5" firstAttribute="centerX" secondItem="mwz-VI-gR5" secondAttribute="centerX" id="gMh-SK-gju"/>
                             <constraint firstItem="onu-KI-cn5" firstAttribute="top" secondItem="mwz-VI-gR5" secondAttribute="bottom" constant="25" id="jBP-8h-pcc"/>
                             <constraint firstItem="mwz-VI-gR5" firstAttribute="centerX" secondItem="IbJ-wV-hBr" secondAttribute="centerX" id="kkB-61-enA"/>
-                            <constraint firstItem="IbJ-wV-hBr" firstAttribute="top" secondItem="Wax-Mu-eNC" secondAttribute="bottom" constant="6" id="l8T-j0-0Do"/>
                             <constraint firstAttribute="centerY" secondItem="IbJ-wV-hBr" secondAttribute="centerY" id="mu7-f3-7UI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="C9R-iX-dqa">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="drf-OR-JUk">
+                            <connections>
+                                <action selector="onCancelButtonTapped:" destination="ysc-7C-DEH" id="pt4-e4-S3u"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="C2p-fC-zER">
+                            <connections>
+                                <action selector="onSaveButtonTapped:" destination="ysc-7C-DEH" id="FaD-Fi-is2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="hometownTextField" destination="onu-KI-cn5" id="eIg-mn-2wS"/>
+                        <outlet property="nameTextField" destination="mwz-VI-gR5" id="Tas-ot-Ezz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ohj-fh-SfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3427" y="1820"/>
+            <point key="canvasLocation" x="3961" y="1820"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DUM-2h-huv">
@@ -760,6 +767,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8El-hm-Gdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2017" y="1808"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wKe-3I-eJQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wX1-3G-MwV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O04-PH-o12">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ysc-7C-DEH" kind="relationship" relationship="rootViewController" id="ibY-G0-Vgp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVm-ZN-aRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3333" y="1820"/>
         </scene>
     </scenes>
 </document>
