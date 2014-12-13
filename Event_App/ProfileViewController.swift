@@ -53,6 +53,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
+
+    @IBAction func onEditButtonTapped(sender: UIBarButtonItem)
+    {
+
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photosArray.count
     }
