@@ -10,8 +10,12 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var eventsArray = [Event]()
+    var photosArray = [Photo]()
     @IBOutlet var tableView: UITableView!
+
+    @IBOutlet var profilePicImageView: UIImageView!
+    @IBOutlet var coverPhotoImageView: UIImageView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,19 +23,46 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
     }
 
-    func retrieveEventData()
+    override func viewWillAppear(animated: Bool) {
+        setProfileData()
+        retrievePhotosData()
+    }
+
+    func setProfileData()
     {
-        Event.queryForEvents { (events, error) -> Void in
-            self.eventsArray = events
+        UniversalProfile.sharedInstance.profile?.profilePicFile.getDataInBackgroundWithBlock({ (data, error) -> Void in
+            self.profilePicImageView.image = UIImage(data: data)
+        })
+
+        UniversalProfile.sharedInstance.profile?.coverPhotoFile.getDataInBackgroundWithBlock({ (data, error) -> Void in
+            self.coverPhotoImageView.image = UIImage(data: data)
+        })
+    }
+
+    func retrievePhotosData()
+    {
+        Photo.queryForPhotos { (photos, error) -> Void in
+            for photo in photos
+            {
+                if photo.photographer.objectId == UniversalProfile.sharedInstance.profile?.objectId
+                {
+                    self.photosArray.append(photo)
+                }
+            }
+            self.tableView.reloadData()
         }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return photosArray.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell") as ProfileTableViewCell
+        let photo = photosArray[indexPath.row]
+        photo.imageFile.getDataInBackgroundWithBlock { (data, error) -> Void in
+            cell.photoImageView.image = UIImage(data: data)
+        }
         return cell
     }
 }

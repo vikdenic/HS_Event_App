@@ -22,10 +22,9 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else
         {
+            setProfileSingleton()
             println("\(PFUser.currentUser().username) logged in")
         }
-
-        setProfileSingleton()
     }
 
     func setProfileSingleton()

@@ -568,6 +568,7 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RmP-mf-8JQ">
                                         <rect key="frame" x="250" y="30" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="k0A-i5-6Ue"/>
                                             <constraint firstAttribute="width" constant="100" id="s9k-Ad-c6I"/>
@@ -586,7 +587,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="320" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dZL-bZ-SGx">
-                                <rect key="frame" x="0.0" y="225" width="600" height="375"/>
+                                <rect key="frame" x="0.0" y="217" width="600" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="320" id="XsJ-Ij-2Aa" customClass="ProfileTableViewCell" customModule="Event_App" customModuleProvider="target">
@@ -611,12 +612,16 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7MD-3G-LZT" id="vFj-CV-Ovq"/>
+                                    <outlet property="delegate" destination="7MD-3G-LZT" id="Le2-Xg-L5P"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="UcE-tW-Pcg" secondAttribute="trailing" constant="-16" id="4jX-f9-cWK"/>
-                            <constraint firstItem="dZL-bZ-SGx" firstAttribute="top" secondItem="UcE-tW-Pcg" secondAttribute="bottom" constant="1" id="8jP-hK-4us"/>
+                            <constraint firstItem="dZL-bZ-SGx" firstAttribute="top" secondItem="UcE-tW-Pcg" secondAttribute="bottom" constant="-7" id="8jP-hK-4us"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dZL-bZ-SGx" secondAttribute="trailing" constant="-16" id="Isj-Lf-mbg"/>
                             <constraint firstItem="UcE-tW-Pcg" firstAttribute="leading" secondItem="8Ya-zi-7C2" secondAttribute="leadingMargin" constant="-16" id="YdH-3m-9pn"/>
                             <constraint firstItem="UcE-tW-Pcg" firstAttribute="top" secondItem="NR0-VA-H1Y" secondAttribute="bottom" id="dek-VJ-Cnd"/>
@@ -626,6 +631,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="E5j-J6-U3t"/>
                     <connections>
+                        <outlet property="coverPhotoImageView" destination="jVl-Ho-6nI" id="CvU-EN-bZE"/>
+                        <outlet property="profilePicImageView" destination="RmP-mf-8JQ" id="fw8-rL-yEj"/>
                         <outlet property="tableView" destination="dZL-bZ-SGx" id="yXD-Ug-J2i"/>
                     </connections>
                 </viewController>
