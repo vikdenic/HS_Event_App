@@ -22,20 +22,18 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else
         {
-            setProfileSingleton()
-            println("\(PFUser.currentUser().username) logged in")
-        }
-    }
-
-    func setProfileSingleton()
-    {
-        Profile.queryForCurrentUsersProfile { (profile, error) -> Void in
-            UniversalProfile.sharedInstance.profile = profile
+            Profile.queryForCurrentUsersProfile({ (profile, error) -> Void in
+                println("\(PFUser.currentUser().username) logged in")
+                self.setEventData()
+            })
         }
     }
 
     override func viewWillAppear(animated: Bool) {
-        setEventData()
+        if PFUser.currentUser() != nil
+        {
+            setEventData()
+        }
     }
 
     @IBAction func onRefreshButtonTapped(sender: UIBarButtonItem)
