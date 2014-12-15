@@ -20,35 +20,16 @@ class Profile: PFObject, PFSubclassing
         return "Profile"
     }
 
+    ///The user that the profile points to
     @NSManaged var user : User!
+    ///The name of this user on their profile
     @NSManaged var name : String!
+    ///Where this user says they're from on their profile
     @NSManaged var hometown : String!
-    @NSManaged var bio : String!
+    ///The file of the user's profile image (must be converted to UIImage for displaying)
     @NSManaged var profilePicFile : PFFile!
 
-//    var profilePic : UIImage! {
-//        get
-//        {
-//            return UIImage(data: profilePicFile.getData(nil))
-//        }
-//        set
-//        {
-//            profilePicFile = PFFile(data: UIImagePNGRepresentation(profilePic))
-//        }
-//    }
-
-    @NSManaged var coverPhotoFile : PFFile!
-//    var coverPhoto : UIImage! {
-//        get
-//        {
-//            return UIImage(data: coverPhotoFile.getData(nil))
-//        }
-//        set
-//        {
-//            coverPhotoFile = PFFile(data: UIImagePNGRepresentation(coverPhoto))
-//        }
-//    }
-
+    ///Creates a new profile
     class func createProfile(user : User!, completed:(profile: Profile!, succeeded: Bool!, error: NSError!) -> Void)
     {
         let newProfile = Profile()
@@ -66,6 +47,7 @@ class Profile: PFObject, PFSubclassing
         }
     }
 
+    ///Queries for the profile of the current user, and sets the kProfile singleton
     class func queryForCurrentUsersProfile(completed:(profile : Profile!, error : NSError!) -> Void)
     {
         let query = Profile.query()

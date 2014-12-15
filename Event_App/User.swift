@@ -15,7 +15,7 @@ class User: PFUser, PFSubclassing
         self.registerSubclass()
     }
 
-    ///Creates new user
+    ///Creates a new user
     class func registerNewUser(username : String!, password : String!, completed:(result : Bool!, error : NSError!) -> Void)
     {
         let newUser = User()
@@ -42,6 +42,7 @@ class User: PFUser, PFSubclassing
         }
     }
 
+    ///Logs in a user
     class func loginUser(username : String!, password : String!, completed:(result : Bool!, error : NSError!) -> Void)
     {
         PFUser.logInWithUsernameInBackground(username, password: password) { (user, parseError) -> Void in

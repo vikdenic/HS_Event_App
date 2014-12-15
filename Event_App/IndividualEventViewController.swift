@@ -39,7 +39,6 @@ class IndividualEventViewController: UIViewController, UITableViewDelegate, UITa
                     self.photosArray.append(photo)
                 }
             }
-            
             self.photosArray.reverse()
             self.tableView.reloadData()
         }

@@ -29,10 +29,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         kProfile?.profilePicFile.getDataInBackgroundWithBlock({ (data, error) -> Void in
             self.profilePicImageView.image = UIImage(data: data)
         })
-
-        kProfile?.coverPhotoFile.getDataInBackgroundWithBlock({ (data, error) -> Void in
-            self.coverPhotoImageView.image = UIImage(data: data)
-        })
     }
 
     func retrievePhotosData()

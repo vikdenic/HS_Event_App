@@ -20,35 +20,18 @@ class Event: PFObject, PFSubclassing
         return "Event"
     }
 
+    ///The title of the event
     @NSManaged var title : String!
+    ///Details about the event
     @NSManaged var details : String!
-    @NSManaged var date : NSDate!
+    ///The profile of the user who created the event
     @NSManaged var host : Profile!
-
-    @NSManaged var eventPicFile : PFFile!
-    var eventPic : UIImage! {
-        get
-        {
-            return UIImage(data: eventPicFile.getData(nil))
-        }
-        set
-        {
-            eventPicFile = PFFile(data: UIImagePNGRepresentation(eventPic))
-        }
-    }
-
+    ///The Parse location object of where the event is taking place (must be converted to a CLLocation for further functionality)
     @NSManaged var location : PFGeoPoint!
-//    var location : CLLocation! {
-//        get
-//        {
-//            return CLLocation(latitude: locationGeoPoint.longitude, longitude: locationGeoPoint.latitude)
-//        }
-//        set
-//        {
-//            locationGeoPoint = PFGeoPoint(location: location)
-//        }
-//    }
+    ///The file of the photo representing the event (must be converted to UIImage for displaying)
+    @NSManaged var eventPicFile : PFFile!
 
+    ///Queries for all events and returns them in the block callback as [Event]
     class func queryForEvents(completed:(events : [Event]!, error : NSError!) -> Void)
     {
         let query = Event.query()
