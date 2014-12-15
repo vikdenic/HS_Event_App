@@ -10,31 +10,27 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    //MARK: Properties
     var photosArray = [Photo]()
     @IBOutlet var tableView: UITableView!
-
     @IBOutlet var profilePicImageView: UIImageView!
     @IBOutlet var coverPhotoImageView: UIImageView!
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+    //MARK: View lifecycle
     override func viewWillAppear(animated: Bool) {
         setProfileData()
         retrievePhotosData()
     }
 
+    //MARK: Helper methods
     func setProfileData()
     {
-        UniversalProfile.sharedInstance.profile?.profilePicFile.getDataInBackgroundWithBlock({ (data, error) -> Void in
+        title = kProfile?.name
+        kProfile?.profilePicFile.getDataInBackgroundWithBlock({ (data, error) -> Void in
             self.profilePicImageView.image = UIImage(data: data)
         })
 
-        UniversalProfile.sharedInstance.profile?.coverPhotoFile.getDataInBackgroundWithBlock({ (data, error) -> Void in
+        kProfile?.coverPhotoFile.getDataInBackgroundWithBlock({ (data, error) -> Void in
             self.coverPhotoImageView.image = UIImage(data: data)
         })
     }
@@ -44,7 +40,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         Photo.queryForPhotos { (photos, error) -> Void in
             for photo in photos
             {
-                if photo.photographer.objectId == UniversalProfile.sharedInstance.profile?.objectId
+                if photo.photographer.objectId == kProfile?.objectId
                 {
                     self.photosArray.append(photo)
                 }
@@ -53,12 +49,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
-
-    @IBAction func onEditButtonTapped(sender: UIBarButtonItem)
-    {
-
-    }
-
+    //MARK: UITableViewDelegate methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photosArray.count
     }

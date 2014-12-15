@@ -10,9 +10,11 @@ import Foundation
 
 class LoginViewController: UIViewController {
 
+    //MARK: Properties
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
+    //MARK: Actions
     @IBAction func onLoginButtonTapped(sender: UIButton)
     {
         if usernameTextField.text == "" || passwordTextField.text == ""

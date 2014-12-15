@@ -10,12 +10,13 @@ import UIKit
 
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    //MARK: Properties
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var hometownTextField: UITextField!
     let imagePicker = UIImagePickerController()
-    var selectedImage = UIImage()
-    let profile = UniversalProfile.sharedInstance.profile
+    var selectedImage = UIImage?()
 
+    //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCamera()
@@ -25,6 +26,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         setProfileData()
     }
 
+    //MARK: Helper methods
     func setUpCamera()
     {
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -34,18 +36,23 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     func setProfileData()
     {
-        nameTextField.text = profile?.name
-        hometownTextField.text = profile?.hometown
+        nameTextField.text = kProfile?.name
+        hometownTextField.text = kProfile?.hometown
     }
 
     func saveProfileData()
     {
-        profile?.name = nameTextField.text
-        profile?.hometown = hometownTextField.text
-        profile?.profilePicFile = PFFile(data: UIImagePNGRepresentation(selectedImage))
-        profile?.saveInBackgroundWithBlock(nil)
+        kProfile?.name = nameTextField.text
+        kProfile?.hometown = hometownTextField.text
+        if selectedImage != nil
+        {
+            kProfile?.profilePicFile = PFFile(data: UIImagePNGRepresentation(selectedImage))
+        }
+        kProfile?.saveInBackgroundWithBlock(nil)
+        
     }
 
+    //MARK: Actions
     @IBAction func onSelectPhotoTapped(sender: UIButton)
     {
         presentViewController(imagePicker, animated: true, completion: nil)
@@ -63,6 +70,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    //UIImagePickerControllerDelegate methods
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         dismissViewControllerAnimated(true, completion: { () -> Void in

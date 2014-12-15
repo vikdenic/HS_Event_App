@@ -10,9 +10,11 @@ import UIKit
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    //MARK: Properties
     var eventsArray = [Event]()
     @IBOutlet var tableView: UITableView!
 
+    //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,11 +38,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    @IBAction func onRefreshButtonTapped(sender: UIBarButtonItem)
-    {
-        setEventData()
-    }
-
+    //MARK: Helper methods
     func setEventData()
     {
         Event.queryForEvents { (events, error) -> Void in
@@ -49,6 +47,13 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
+    //MARK: Actions
+    @IBAction func onRefreshButtonTapped(sender: UIBarButtonItem)
+    {
+        setEventData()
+    }
+
+    //MARK: UITableViewDelegate methods
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as EventTableViewCell
         let event = eventsArray[indexPath.row] as Event!
@@ -70,6 +75,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return eventsArray.count
     }
 
+    //MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if segue.identifier == "EventsToIndivSegue"

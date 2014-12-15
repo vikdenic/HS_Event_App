@@ -10,9 +10,11 @@ import Foundation
 
 class RegisterViewController: UIViewController {
 
+    //MARK: Properties
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
+    //MARK: Actions
     @IBAction func onRegisterButtonTapped(sender: UIButton)
     {
         if usernameTextField.text == "" || passwordTextField.text == ""

@@ -10,6 +10,7 @@
 		9312247D1A3A57AD0023C95D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312247C1A3A57AD0023C95D /* ProfileViewController.swift */; };
 		9312247F1A3A59B10023C95D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312247E1A3A59B10023C95D /* ProfileTableViewCell.swift */; };
 		932A388C1A3B57A80004057C /* UniversalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A388B1A3B57A80004057C /* UniversalProfile.swift */; };
+		93321D1D1A3EB869001EF55E /* MMkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93321D1C1A3EB869001EF55E /* MMkConstants.swift */; };
 		9372BED21A26C15100BBC302 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372BED11A26C15100BBC302 /* LoginViewController.swift */; };
 		939016661A3B49F3007F5C8A /* IndividualEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939016651A3B49F3007F5C8A /* IndividualEventTableViewCell.swift */; };
 		939016681A3B4E29007F5C8A /* IndividualEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939016671A3B4E29007F5C8A /* IndividualEventViewController.swift */; };
@@ -59,6 +60,7 @@
 		9312247C1A3A57AD0023C95D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9312247E1A3A59B10023C95D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		932A388B1A3B57A80004057C /* UniversalProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalProfile.swift; sourceTree = "<group>"; };
+		93321D1C1A3EB869001EF55E /* MMkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMkConstants.swift; sourceTree = "<group>"; };
 		9372BED11A26C15100BBC302 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		939016651A3B49F3007F5C8A /* IndividualEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualEventTableViewCell.swift; sourceTree = "<group>"; };
 		939016671A3B4E29007F5C8A /* IndividualEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualEventViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				93DC7DF11A267AF200265A5A /* MMAlertManager.swift */,
 				93CD38E91A37657800ECED82 /* MMExtensions.swift */,
+				93321D1C1A3EB869001EF55E /* MMkConstants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				93DC7DEF1A26770B00265A5A /* RegisterViewController.swift in Sources */,
 				93DCA26D1A3BCFFB00DAEC1B /* EditProfileViewController.swift in Sources */,
 				93DC7DE71A26646C00265A5A /* Profile.swift in Sources */,
+				93321D1D1A3EB869001EF55E /* MMkConstants.swift in Sources */,
 				939016681A3B4E29007F5C8A /* IndividualEventViewController.swift in Sources */,
 				93DC7DA41A265FCE00265A5A /* AppDelegate.swift in Sources */,
 				93DC7DEB1A26648E00265A5A /* Photo.swift in Sources */,

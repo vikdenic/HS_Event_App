@@ -10,11 +10,13 @@ import UIKit
 
 class IndividualEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    //MARK: Properties
     @IBOutlet var tableView: UITableView!
     let imagePicker = UIImagePickerController()
     var photosArray = [Photo]()
     var thisEvent = Event()
 
+    //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCamera()
@@ -24,6 +26,7 @@ class IndividualEventViewController: UIViewController, UITableViewDelegate, UITa
         setPhotosData()
     }
 
+    //MARK: Helper methods
     func setPhotosData()
     {
         photosArray.removeAll(keepCapacity: false)
@@ -49,12 +52,19 @@ class IndividualEventViewController: UIViewController, UITableViewDelegate, UITa
         imagePicker.delegate = self
     }
 
+    //MARK: Actions
+    @IBAction func onAddButtonTapped(sender: UIBarButtonItem)
+    {
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+
+    //MARK: UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         dismissViewControllerAnimated(true, completion: { () -> Void in
             let newPhoto = Photo()
             newPhoto.imageFile = PFFile(data: UIImagePNGRepresentation(image))
             newPhoto.event = self.thisEvent
-            newPhoto.photographer = UniversalProfile.sharedInstance.profile
+            newPhoto.photographer = kProfile
             newPhoto.likesCount = 0
             newPhoto.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
                 self.setPhotosData()
@@ -62,6 +72,7 @@ class IndividualEventViewController: UIViewController, UITableViewDelegate, UITa
         })
     }
 
+    //MARK: UITableViewDelegate methods
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell") as IndividualEventTableViewCell
         let photo = photosArray[indexPath.row]
@@ -77,11 +88,6 @@ class IndividualEventViewController: UIViewController, UITableViewDelegate, UITa
         })
 
         return cell
-    }
-
-    @IBAction func onAddButtonTapped(sender: UIBarButtonItem)
-    {
-        presentViewController(imagePicker, animated: true, completion: nil)
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

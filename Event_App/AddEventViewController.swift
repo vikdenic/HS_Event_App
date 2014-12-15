@@ -10,6 +10,7 @@ import UIKit
 
 class AddEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    //MARK: View lifecycle
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var detailsTextField: UITextField!
     @IBOutlet var locationTextField: UITextField!
@@ -22,6 +23,7 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         setUpCamera()
     }
 
+    //MARK: Helper methods
     func setUpCamera()
     {
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -32,7 +34,7 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     func createNewEvent()
     {
         let newEvent = Event()
-        newEvent.host = UniversalProfile.sharedInstance.profile
+        newEvent.host = kProfile
         newEvent.details = detailsTextField.text
         newEvent.title = titleTextField.text
         newEvent.eventPicFile = PFFile(data: UIImagePNGRepresentation(selectedImage))
@@ -40,7 +42,7 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         newEvent.saveInBackgroundWithBlock(nil)
     }
 
-    //MARK: Geocoding
+    //MARK: Reverse Geocoding
     func geocodeLocationWithBlock(located : (succeeded : Bool, error : NSError!) -> Void)
     {
         var geocode = CLGeocoder()
@@ -59,6 +61,7 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         })
     }
 
+    //MARK: Actions
     @IBAction func onSelectEventPhotoTapped(sender: UIButton)
     {
         presentViewController(imagePicker, animated: true, completion: nil)
@@ -85,6 +88,7 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    //MARK: UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!)
     {
         dismissViewControllerAnimated(true, completion: { () -> Void in
