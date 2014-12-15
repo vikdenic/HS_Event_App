@@ -18,6 +18,6 @@ class UniversalProfile{
     }
 
     ///A single, shared instance of the current user's profile.
-    ///This same instance can be called from any class
+    ///This shared instance can be called from any class.
     var profile = Profile?()
 }
